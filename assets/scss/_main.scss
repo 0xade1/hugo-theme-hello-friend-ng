@@ -1,7 +1,7 @@
 html {
   box-sizing: border-box;
   line-height: 1.6;
-  letter-spacing: 0.06em;
+  //letter-spacing: 0.06em;
   scroll-behavior: smooth;
 }
 
@@ -14,11 +14,11 @@ html {
 body {
   margin: 0;
   padding: 0;
-  font-family: Inter, -apple-system, BlinkMacSystemFont, "Roboto",
-    "Segoe UI", Helvetica, Arial, sans-serif;
+  font-family: Inter, -apple-system, BlinkMacSystemFont, "Roboto", "Segoe UI",
+    Helvetica, Arial, sans-serif;
   font-display: auto;
   font-size: 1rem;
-  line-height: 1.54;
+  line-height: 1.5;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   font-feature-settings: "liga", "tnum", "case", "calt", "zero", "ss01", "locl";
@@ -47,12 +47,12 @@ body {
     color: $light-color;
   }
 
-  [data-theme=dark] & {
+  [data-theme="dark"] & {
     background-color: $dark-background;
     color: $dark-color;
   }
 
-  [data-theme=light] & {
+  [data-theme="light"] & {
     background-color: $light-background;
     color: $light-color;
   }
@@ -69,12 +69,12 @@ h6 {
 }
 
 h1 {
-  font-size: 2.625rem;
+  font-size: 2.125rem;
 }
 
 h2 {
   font-size: 1.625rem;
-  margin-top: 2.5em;
+  margin-top: 1.5em;
 }
 
 h3 {
@@ -189,7 +189,9 @@ figure {
   }
 }
 
-em, i, strong {
+em,
+i,
+strong {
   // Default
   color: $light-color-variant;
 
@@ -201,11 +203,11 @@ em, i, strong {
     color: $light-color-variant;
   }
 
-  [data-theme=dark] & {
+  [data-theme="dark"] & {
     color: white;
   }
 
-  [data-theme=light] & {
+  [data-theme="light"] & {
     color: black;
   }
 }
@@ -217,9 +219,8 @@ code {
   padding: 1px 6px;
   margin: 0 2px;
   border-radius: 5px;
-  font-size: 0.95rem;
-  // Default
-  background: $light-background-secondary;
+  font-size: 0.7rem;
+  color: darkorange;
 
   @media (prefers-color-scheme: dark) {
     background: $dark-background-secondary;
@@ -229,27 +230,27 @@ code {
     background: $light-background-secondary;
   }
 
-  [data-theme=dark] & {
+  [data-theme="dark"] & {
     background: $dark-background-secondary;
   }
 
-  [data-theme=light] & {
+  [data-theme="light"] & {
     background: $light-background-secondary;
   }
 }
 
 pre {
-  [data-theme=dark] & {
-    background-color: $dark-background-secondary;
+  [data-theme="dark"] & {
+    background-color: $dark-background-pre;
   }
 
-  [data-theme=light] & {
-    background-color: $light-background-secondary;
+  [data-theme="light"] & {
+    background-color: $light-background-pre;
   }
 
   padding: 10px 10px 10px 20px;
   border-radius: 8px;
-  font-size: 0.95rem;
+  font-size: 0.8rem;
   overflow: auto;
 
   @media #{$media-size-phone} {
@@ -268,16 +269,16 @@ pre {
     @media (prefers-color-scheme: dark) {
       color: inherit;
     }
-  
+
     @media (prefers-color-scheme: light) {
       color: #ccc;
     }
-  
-    [data-theme=dark] & {
+
+    [data-theme="dark"] & {
       color: inherit;
     }
-  
-    [data-theme=light] & {
+
+    [data-theme="light"] & {
       color: #ccc;
     }
   }
@@ -285,7 +286,7 @@ pre {
 
 blockquote {
   border-left: 3px solid #3eb0ef;
-  margin: 40px;
+  margin: 20px;
   padding: 10px 20px;
 
   @media #{$media-size-phone} {
@@ -362,11 +363,11 @@ hr {
     background: $light-border-color;
   }
 
-  [data-theme=dark] & {
+  [data-theme="dark"] & {
     background: $dark-border-color;
   }
 
-  [data-theme=light] & {
+  [data-theme="light"] & {
     background: $light-border-color;
   }
 }
@@ -450,14 +451,14 @@ hr {
 }
 */
 .tag-cloud-item a {
-    text-decoration: none;
+  text-decoration: none;
 }
 
 a:hover {
-    color: #fe5186;
-    text-decoration: none;
+  color: #fe5186;
+  text-decoration: none;
 }
 
 .post-cover {
-    background-color: $dark-background;
+  background-color: $dark-background;
 }

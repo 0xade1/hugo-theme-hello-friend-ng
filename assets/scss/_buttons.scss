@@ -11,7 +11,7 @@ a.button {
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 8px 18px;
+  padding: 10px 15px;
   margin-bottom: 5px;
   text-decoration: none;
   text-align: center;
@@ -25,14 +25,14 @@ a.button {
   // Default
   background: $light-background-header;
 
-  :hover{
-      border:1px solid transparent;
-      color:#fff;
-      text-decoration:none;
-      border-bottom:none;
+  :hover {
+    border: 1px solid transparent;
+    color: #fff;
+    text-decoration: none;
+    border-bottom: none;
   }
   @media (prefers-color-scheme: dark) {
-    background: $dark-background-header;
+    background: $dark-background-secondary;
     color: inherit;
   }
 
@@ -40,12 +40,12 @@ a.button {
     background: $light-background-header;
   }
 
-  [data-theme=dark] & {
-    background: $dark-background-header;
+  [data-theme="dark"] & {
+    background: $dark-background-secondary;
     color: inherit;
   }
 
-  [data-theme=light] & {
+  [data-theme="light"] & {
     background: $light-background-header;
   }
 
@@ -60,32 +60,27 @@ a.button {
       border-color: $dark-background-secondary;
       color: inherit;
     }
-  
+
     @media (prefers-color-scheme: light) {
       border-color: $light-background-secondary;
     }
-  
-    [data-theme=dark] & {
+
+    [data-theme="dark"] & {
       border-color: $dark-background-secondary;
       color: inherit;
     }
-  
-    [data-theme=light] & {
-      border-color: $light-background-secondary;
-    }
 
-    :hover {
-      transform: none;
-      box-shadow: none;
-      background-color: #3d8c38;
+    [data-theme="light"] & {
+      border-color: $light-background-secondary;
     }
   }
 
   &.primary {
-    box-shadow: 0 4px 6px rgba(50, 50, 93, .11), 0 1px 3px rgba(0, 0, 0, .08);
+    box-shadow: 0 4px 6px rgba(50, 50, 93, 0.11), 0 1px 3px rgba(0, 0, 0, 0.08);
 
     &:hover {
-      box-shadow: 0 2px 6px rgba(50, 50, 93, .21), 0 1px 3px rgba(0, 0, 0, .08);
+      box-shadow: 0 2px 6px rgba(50, 50, 93, 0.21),
+        0 1px 3px rgba(0, 0, 0, 0.08);
     }
   }
 
@@ -95,7 +90,7 @@ a.button {
   }
 
   &.small {
-    font-size: .8rem;
+    font-size: 0.8rem;
   }
 
   &.wide {
@@ -130,24 +125,24 @@ a.button {
       background: $dark-background-secondary;
       color: inherit;
     }
-  
+
     @media (prefers-color-scheme: light) {
       background: $light-background-secondary;
     }
-  
-    [data-theme=dark] & {
+
+    [data-theme="dark"] & {
       background: $dark-background-secondary;
       color: inherit;
     }
-  
-    [data-theme=light] & {
+
+    [data-theme="light"] & {
       background: $light-background-secondary;
     }
   }
 }
 
-.button:hover,
-.button:focus,
+a.button:hover,
+a.button:focus,
 button:hover,
 button:focus,
 input[type="submit"]:hover,
@@ -159,7 +154,7 @@ input[type="button"]:focus {
   background-color: #fe5186; //#3d8c38;
   border: 1px solid transparent;
   color: #fff;
-  padding: 10px 15px;
+  //padding: 10px 15px;
   text-decoration: none;
   border-bottom: none;
 }

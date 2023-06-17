@@ -1,5 +1,5 @@
 /* PrismJS 1.23.0
-https://prismjs.com/download.html#themes=prism-twilight&languages=markup+css+clike+javascript+ada+apacheconf+bash+batch+c+csharp+cpp+coffeescript+css-extras+dart+django+dns-zone-file+docker+elixir+etlua+erlang+git+go+graphql+groovy+haml+handlebars+haskell+http+hpkp+hsts+ini+java+javadoc+javadoclike+jsdoc+js-extras+json+json5+jsonp+julia+kotlin+latex+less+lisp+lua+markup-templating+matlab+nginx+objectivec+perl+php+phpdoc+php-extras+powershell+promql+protobuf+puppet+purescript+python+r+jsx+tsx+regex+rest+ruby+rust+sass+scss+shell-session+sql+stylus+swift+toml+twig+typescript+typoscript+verilog+vhdl+vim+visual-basic+wasm+xml-doc+yaml&plugins=line-highlight+line-numbers+show-language+toolbar */
+https://prismjs.com/download.html#themes=prism-twilight&languages=markup+css+clike+javascript+asm6502+bash+batch+bro+c+csharp+cpp+css-extras+diff+dns-zone-file+docker+git+go+graphql+http+hpkp+hsts+java+javadoc+javadoclike+javastacktrace+jsdoc+js-extras+json+json5+jsonp+kotlin+latex+makefile+markdown+markup-templating+matlab+perl+php+powershell+python+jsx+tsx+regex+rest+ruby+rust+sass+scss+shell-session+splunk-spl+sql+toml+typescript+vim+visual-basic+yaml&plugins=line-highlight+line-numbers+wpd+file-highlight+show-language+inline-color+toolbar+copy-to-clipboard+match-braces+diff-highlight+treeview */
 /**
  * prism.js Twilight theme
  * Based (more or less) on the Twilight theme originally of Textmate fame.
@@ -314,14 +314,14 @@ pre[class*="language-"].line-numbers > code {
 
 code[class*="language-"] a[href],
 pre[class*="language-"] a[href] {
-  cursor: help;
-  text-decoration: none;
+	cursor: help;
+	text-decoration: none;
 }
 
 code[class*="language-"] a[href]:hover,
 pre[class*="language-"] a[href]:hover {
-  cursor: help;
-  text-decoration: underline;
+	cursor: help;
+	text-decoration: underline;
 }
 div.code-toolbar {
 	position: relative;
