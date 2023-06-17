@@ -19,6 +19,10 @@
     white-space: nowrap;
   }
 
+  &:hover{
+    color: #fe5186;
+  }
+
   &__cursor {
     display: inline-block;
     width: 10px;

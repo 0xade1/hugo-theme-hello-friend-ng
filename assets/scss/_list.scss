@@ -73,6 +73,11 @@
         align-items: baseline;
         padding: 12px 0;
         text-decoration: none;
+        
+        &:hover {
+          //text-decoration: underline;
+          color: #fe5186;
+        }
       }
     }
 

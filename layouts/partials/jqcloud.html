@@ -1,0 +1,58 @@
+<!-- https://github.com/timdream/wordcloud2.js -->
+{{ $baseurl := .Site.BaseURL}}
+<section class="taxonomy-terms">
+  <div id="demo" style="width: 100%; height: 300px"></div>
+</section>
+
+<script
+  src="https://code.jquery.com/jquery-3.5.1.min.js"
+  integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0="
+  crossorigin="anonymous"
+></script>
+<script src="{{ $baseurl }}/js/jqcloud.min.js"></script>
+<link rel="stylesheet" href="{{ $baseurl }}/css/jqcloud.min.css" />
+
+<script>
+  let tagArray = new Array();
+  let backgroundColor = "#fff";
+
+  {{ range $key, $value := .Data.Terms }}tagArray.push({text: "{{ $key }}", weight: {{ len $value }}, link: '/tags/{{ $key }}'});
+  {{ end }}
+
+  $('#demo').jQCloud(tagArray,{
+    //colors: ["#fe5186","#CF3899","#D54EA5","#DA64B0","#DF7ABB","#E591C7","#EAA7D2","#EFBDDD"],
+    //colors: ["#fe5186","#CF3899","#D54EA5","#DA64B0","#DF7ABB","#E591C7","#EAA7D2","#EFBDDD"],
+    colors: ["#FE6292","#B2395E","#CB416B","#E54979","#FE749E","#FE85AA","#FE97B6"], //,"#FFA8C3","#FFB9CF","#FFCBDB","#FFDCE7","#FFEEF3","#FFFFFF"],
+    fontSize: {
+      from: 0.1,
+      to: 0.02
+    }
+  });
+
+  if (window.matchMedia('(prefers-color-scheme)').media !== 'not all') {
+    console.log('🎉 Dark mode is supported');
+  }
+  /*
+  const tagWrapper = document.querySelector("#tag-wrapper");
+  WordCloud(tagWrapper, {
+      list: tagArray,
+      fontFamily: '"Inter UI", -apple-system, BlinkMacSystemFont, "Roboto", "Segoe UI", Helvetica, Arial, sans-serif',
+      weightFactor: weightFactor,
+      //gridSize: Math.round(16 * $('#canvas').width() / 600),
+      //weightFactor: function (size) {
+      //    return Math.pow(size, 2.3) * $('#canvas').width() / 600;
+      //},
+      backgroundColor: backgroundColor,
+      classes: "tag-cloud-item",
+      rotateRatio: 0.5,
+      rotationSteps: 2,
+  });
+
+  tagWrapper.addEventListener('wordcloudstop', function (e) {
+      document.querySelectorAll('.tag-cloud-item').forEach(function (element) {
+          const text = element.innerHTML;
+          element.innerHTML = `<a href="/tags/${text}/" style="color: inherit;">${text}</a>`;
+      });
+  });
+  */
+</script>

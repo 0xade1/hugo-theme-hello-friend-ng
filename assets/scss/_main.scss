@@ -431,5 +431,33 @@ hr {
 
 // Prism JS Additionals
 .highlight {
-  margin: 30px auto;
+  margin: 10px auto;
+  color: white;
+}
+/*
+.taxonomy-terms {
+    //background-color: $light-background;
+    background-color: black;
+    background: green;
+
+    @media (prefers-color-scheme: dark) {
+        //background-color: $dark-background;
+        //color: $dark-color;
+        background: purple;
+        background-color: grey;
+        color: white;
+    }
+}
+*/
+.tag-cloud-item a {
+    text-decoration: none;
+}
+
+a:hover {
+    color: #fe5186;
+    text-decoration: none;
+}
+
+.post-cover {
+    background-color: $dark-background;
 }

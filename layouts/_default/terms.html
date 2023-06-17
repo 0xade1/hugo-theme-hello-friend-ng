@@ -1,0 +1,33 @@
+{{ define "main" }}
+    {{ $paginator := .Paginate .Data.Pages }}
+    {{ $baseurl := .Site.BaseURL}}
+<main class="posts">
+
+    {{ if eq .Title "Tags" }}
+        {{ partial "jqcloud.html" . }}
+    {{ end }}
+
+    {{ if .Content }}
+    <div class="content">{{ .Content }}</div>
+    {{ end }}
+
+    <!--h1>{{ .Title }}</h1-->
+
+    <div class="post-year">A-Z</div>
+    <div class="posts-group">
+        <br/>
+        <ul class="posts-list">
+            {{ $data := .Data }}
+            {{ range $key, $value := .Data.Terms }}
+            <li class="post-item">
+                <a href="{{ $baseurl }}/{{ $data.Plural }}/{{ $key | urlize }}">
+                    <span class="post-title">{{ $key }}</span>
+                    <span class="post-day">{{ len $value }}</span>
+                </a>
+            </li>
+            {{ end }}
+        </ul>
+    </div>
+
+{{ end }}
+

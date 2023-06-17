@@ -20,6 +20,15 @@
             {{ end }}
         </div>
 
-        {{ partial "javascript.html" . }}
-    </body>
+    {{ partial "javascript.html" . }}
+
+    <!--fastsearch-->
+    <div id="fastSearch">
+      <ul id="searchResults"></ul>
+      <input id="searchInput" tabindex="0" />
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.6.2/dist/fuse.min.js"></script>
+    <!-- download and copy over fuse.js file from fusejs.io -->
+    <script src="/js/fastsearch.js"></script>
+  </body>
 </html>

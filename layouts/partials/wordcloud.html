@@ -1,0 +1,40 @@
+ <!-- https://github.com/timdream/wordcloud2.js -->
+{{ $baseurl := .Site.BaseURL}}
+<section class="taxonomy-terms">
+  <div id="tag-wrapper" style="width: 100%; height: 300px;"></div>
+</section>
+
+<script src="{{ $baseurl }}/js/wordcloud2.js"></script>
+<script>
+    let tagArray = new Array();
+    let weightFactor = 0;
+    let backgroundColor = "#fff";
+
+    {{ range $key, $value := .Data.Terms }} tagArray.push([{{ $key }}, {{ len $value }} ]); weightFactor += {{ len $value }};
+    {{ end }}
+    if (window.matchMedia('(prefers-color-scheme)').media !== 'not all') {
+      console.log('🎉 Dark mode is supported');
+      backgroundColor = "#232425";
+    }
+    const tagWrapper = document.querySelector("#tag-wrapper");
+    WordCloud(tagWrapper, {
+        list: tagArray,
+        fontFamily: '"Inter UI", -apple-system, BlinkMacSystemFont, "Roboto", "Segoe UI", Helvetica, Arial, sans-serif',
+        weightFactor: weightFactor,
+        //gridSize: Math.round(16 * $('#canvas').width() / 600),
+        //weightFactor: function (size) {
+        //    return Math.pow(size, 2.3) * $('#canvas').width() / 600;
+        //},
+        backgroundColor: backgroundColor,
+        classes: "tag-cloud-item",
+        rotateRatio: 0.5,
+        rotationSteps: 2,
+    });
+
+    tagWrapper.addEventListener('wordcloudstop', function (e) {
+        document.querySelectorAll('.tag-cloud-item').forEach(function (element) {
+            const text = element.innerHTML;
+            element.innerHTML = `<a href="/tags/${text}/" style="color: inherit;">${text}</a>`;
+        });
+    });
+</script>
